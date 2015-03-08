@@ -3,14 +3,15 @@
 
 import webapp
 
+
 class acortadorApp(webapp.webApp):
-    
+
 	def devolverUrls(self):
 		html = "</br><strong>Ya acortadas:</strong><ul>"
 		for numero, url in enumerate(self.acortadas):
-			html += "<li>http://" + self.hostname + ":" + str(self.port) + "/" + str(numero) + " -------------- " + url + "</li>"
+			html += "<li>http://" + self.hostname + ":" + str(self.port) + "/" + str(numero) + " <strong>--------------</strong> " + url + "</li>"
 		return html
-
+	
 
 	def parse(self, request):
 		metodo = request.split(' ', 2)[0]
